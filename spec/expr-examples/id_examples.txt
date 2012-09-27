@@ -1,0 +1,8 @@
+foo
+foo_bar
+this_ends_in_an_underscore___
+this88one88has88lots88of123456789numbers
+hideho_neighbor
+i
+CAPITAL_LETTERS
+lowerANDupperLETTERSand50m3numb3r5

@@ -1,0 +1,89 @@
+# Basic _ == _ examples
+2 == 2
+01234 == 56789
+foo == bar
+"hello" == "world"
+'a' == 'b'
+2 == bar
+2 == "world"
+2 == 'b'
+foo  ==  "world"
+foo  ==  'b'
+"hello" == 'b'
+
+# Basic _ == (_ == ...) examples
+2==2==2
+2==4==6==8
+'a' == 'b' == 'c' == 'd' == 'e'
+"hello" == "there" == "how" == "are" == "you?"
+
+# Basic _ != _ examples
+2 != 2
+01234 != 56789
+foo != bar
+"hello" != "world"
+'a' != 'b'
+2 != bar
+2 != "world"
+2 != 'b'
+foo  !=  "world"
+foo  !=  'b'
+"hello" != 'b'
+
+# Basic _ <= _ examples
+2 <= 2
+01234 <= 56789
+foo <= bar
+"hello" <= "world"
+'a' <= 'b'
+2 <= bar
+2 <= "world"
+2 <= 'b'
+foo  <=  "world"
+foo  <=  'b'
+"hello" <= 'b'
+
+# Basic _ < _ examples
+2 < 2
+01234 < 56789
+foo < bar
+"hello" < "world"
+'a' < 'b'
+2 < bar
+2 < "world"
+2 < 'b'
+foo  <  "world"
+foo  <  'b'
+"hello" < 'b'
+
+# Basic _ >= _ examples
+2 >= 2
+01234 >= 56789
+foo >= bar
+"hello" >= "world"
+'a' >= 'b'
+2 >= bar
+2 >= "world"
+2 >= 'b'
+foo  >=  "world"
+foo  >=  'b'
+"hello" >= 'b'
+
+# Basic _ > _ examples
+2 > 2
+01234 > 56789
+foo > bar
+"hello" > "world"
+'a' > 'b'
+2 > bar
+2 > "world"
+2 > 'b'
+foo  >  "world"
+foo  >  'b'
+"hello" > 'b'
+
+# Mixed relational operator examples
+1 == 2 != 3 <= 4 < 5 >= 6 > 7
+foo == bar != baz <= cat < dog >= less > more
+100 == 99 != 98 <= 97 < 96 >= 95 > 94 == 93 != 92 <= 91 < 90 >= 89 > 88 == 87 != 86 <= 85 < 84 >= 83 > 82 == 81 != 80 <= 79 < 78 >= 77 > 76
+1 == 'a' != foo <= "Hello"

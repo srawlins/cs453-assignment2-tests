@@ -1,0 +1,17 @@
+foo[0]
+foo[123]
+foo['E']
+foo["ey"]
+foo[bar]
+this_ends_in_an_underscore___[123]
+this88one88has88lots88of123456789numbers[under_scores__]
+hideho_neighbor["hideho_neighbor"]
+i[j]
+CAPITAL_LETTERS[lowercase_letters]
+lowerANDupperLETTERSand50m3numb3r5[eexxpprreessiioonn]
+
+# nested things
+ary[array[2]]
+ary [ ary [ ary [ ary [ary]]]]
+ary[a['b']]
+aru   [   aro   [   "xyz"   ]   ]

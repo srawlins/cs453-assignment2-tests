@@ -1,0 +1,6 @@
+for (;;);
+for (foo='c';;);
+for (f='g';h;i='j');
+for (a=1 ; a ; a=1) ;
+for (a=1 ;a; a=1) for (;;);
+for (a=1 ;  a  ; a=1) for (b=2;b;b=2);

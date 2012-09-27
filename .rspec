@@ -1,0 +1,3 @@
+--color
+--fail-fast
+--tag ~expr_only --tag ~assg_only --tag ~stmt_only --tag ~func_only

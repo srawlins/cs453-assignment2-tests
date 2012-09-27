@@ -1,0 +1,5 @@
+{ foo = 1; }
+{foo[a+1+"string"]=0;}
+{foo[0]=a==b;}
+{   foo [ 0 ] = a == b ; }
+{foo=bar;a=1;a[0]=x;foo=zero;}

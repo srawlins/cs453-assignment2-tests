@@ -1,0 +1,6 @@
+foo (a_hundred);
+foo (x, yyy);
+foo( yyy+7, x );
+foo(x,threeple,x);
+foo(so, "many", 'a','r','g','s');
+bar  (  so_sleeeeeeeepy  )  ;
