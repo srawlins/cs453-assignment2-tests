@@ -9,6 +9,9 @@ def lines_in_each_stmt_example
         input = examples.readline
         next if input == "\n"
         next if input[0] == '#'
+        if THRESHOLD
+          next unless PRNG.rand(0..99) < THRESHOLD
+        end
         yield(group_name, input.chomp)
       rescue EOFError
         break
@@ -54,12 +57,17 @@ end
 describe "compile", "prog examples building on all of the basic stmt examples" do
   wrappings = [
     ["", ""],
-    ["", "", ""]
+    ["", "", ""],
+    ["int a;", ""],
+    ["int a, b, c; ", ""],
+    ["int a; char b; ", ""],
+    ["", "int a;"],
+    ["int a, b; ", "char c, d;"]
   ]
   wrappings.each do |ary|
     func_examples do |group_name, wrapped_input|
       wrapped_input = ary.join(wrapped_input)
-      it "should parse toplevel #{group_name.gsub('_', ' ')} correctly: \"#{wrapped_input}\"" do
+      it "should parse toplevel #{group_name.gsub('_', ' ')} correctly: \"#{wrapped_input}\"", :generated => true do
         @pid, @stdin, @stdout, @stderr, @status = compile(wrapped_input)
         @stdout_lines = @stdout.readlines
         @stdout_lines.should eq []
