@@ -68,12 +68,7 @@ describe "compile", "prog examples building on all of the basic stmt examples" d
     func_examples do |group_name, wrapped_input|
       wrapped_input = ary.join(wrapped_input)
       it "should parse toplevel #{group_name.gsub('_', ' ')} correctly: \"#{wrapped_input}\"", :generated => true do
-        @pid, @stdin, @stdout, @stderr, @status = compile(wrapped_input)
-        @stdout_lines = @stdout.readlines
-        @stdout_lines.should eq []
-        @stderr_lines = @stderr.readlines
-        @stderr_lines.should eq []
-        @status.exitstatus.should be 0
+        compile(wrapped_input).should succeed
       end
     end
   end
