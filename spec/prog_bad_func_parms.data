@@ -1,0 +1,14 @@
+void g(int d, imt e, char f) {}
+int func(int a, char b, ing c) {}
+%% ERROR LINES 1 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+void g(ing x) {}
+
+
+int func(int a, int b, char c, int d, int e, char f, int g, int h, chum i) {}
+%% ERROR LINES 1 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+int f(int too_many_commas,,, int x) {}
+
+int g(void void) {}
+%% ERROR LINES 1 3

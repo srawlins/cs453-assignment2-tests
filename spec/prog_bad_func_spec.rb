@@ -1,16 +1,21 @@
 require_relative 'spec_helper'
 
-describe "compile", "bad inputs" do
-  it "should correctly write error line numbers" do
-    inputs = []
-    # This needed to be modified. "return" must end in ";"
-    inputs << <<-C
-void g(int d, imt e, char f) {}
-int func(int a, char b, ing c) {}
-    C
+include Helpers
 
-    inputs.each do |input|
-      compile(input).should fail_with_error_messages_about_lines(1, 2)
+describe "compile", "bad func" do
+  it "should correctly output error line numbers for bad func parms" do
+    inputs = read_inputs_from(__FILE__.sub('_spec.rb', '_parms.data'))
+
+    inputs.each do |input, error_lines|
+      compile(input).should fail_with_error_messages_about_lines(*error_lines)
+    end
+  end
+
+  it "should correctly output error line numbers for bad func var_decls" do
+    inputs = read_inputs_from(__FILE__.sub('_spec.rb', '_var_decls.data'))
+
+    inputs.each do |input, error_lines|
+      compile(input).should fail_with_error_messages_about_lines(*error_lines)
     end
   end
 end
