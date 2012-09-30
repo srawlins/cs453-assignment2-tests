@@ -7,3 +7,48 @@ char y
 char z;
 %% ERROR LINES 3 7
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+int a, b, int;
+int x,,;
+int a, b, char;
+int foo, bar, "bat";
+%% ERROR LINES 1 2 3 4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+char a b c;
+int w[512];
+int x[];
+
+int y, y, y[z];
+
+int z, z, z[-4];
+%% ERROR LINES 1 3 5 7
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+extern foo bar(void);
+
+extern void bar();
+%% ERROR LINES 1 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+extern void f(int x);
+extern int bar();
+
+extern foo bar(void);
+extern int bar(voip);
+%% ERROR LINES 2 4 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+foo bar(void);
+
+void bar();
+%% ERROR LINES 1 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+extern void f(int x);
+int bar();
+
+foo bar(void);
+int bar(voip);
+%% ERROR LINES 2 4 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+extern void id(void), id(void), id(void);
+extern void id(void), id(void), int(void);
+
+extern void id(void),,,,;
+void id(void), id  (  void  )  id  (  void  )
+%% ERROR LINES 2 4 5

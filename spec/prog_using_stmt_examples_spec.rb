@@ -74,10 +74,10 @@ describe "compile", "prog examples building on all of the basic stmt examples" d
   end
 end
 
-def compile(stdin)
+def compile(input)
   @pid, @stdin, @stdout, @stderr = Open4::popen4("compile")
-  stdin.each_line { |line| @stdin.puts line }
+  input.each_line { |line| @stdin.puts line }
   @stdin.close
   ignored, @status = Process::waitpid2(@pid)
-  return @pid, @stdin, @stdout, @stderr, @status
+  return input, @pid, @stdin, @stdout, @stderr, @status
 end
