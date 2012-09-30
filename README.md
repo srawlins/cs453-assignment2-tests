@@ -12,6 +12,12 @@ These tests use ruby, and rspec, a test framework. It will take a little bit of 
 How it Works
 ============
 
+Since no spec implementation was delivered, I've just written these tests to use whatever `compile` is on the `$PATH`. So first set your path:
+
+    PATH=$PATH:$HOME/path/to/your/assg2
+
+Your `compile` should already be compiled. This test suite is not going to compile your source.
+
 To run the tests, cd into this test directory, and run:
 
     rspec
