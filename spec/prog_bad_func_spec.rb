@@ -18,6 +18,14 @@ describe "compile", "bad func" do
       compile(input).should fail_with_error_messages_about_lines(*error_lines)
     end
   end
+
+  it "should correctly output error line numbers for bad func stmts" do
+    inputs = read_inputs_from(__FILE__.sub('_spec.rb', '_stmt.data'))
+
+    inputs.each do |input, error_lines|
+      compile(input).should fail_with_error_messages_about_lines(*error_lines)
+    end
+  end
 end
 
 def compile(input)

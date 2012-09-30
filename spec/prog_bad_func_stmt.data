@@ -1,0 +1,8 @@
+int id(void) {
+    a=b;
+    int a;
+
+    a = b*b;
+    int b;
+}
+%% ERROR LINES 3 6
