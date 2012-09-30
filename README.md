@@ -5,6 +5,10 @@ This repository is where I am keeping tests for assignment 2 for CS 453. There i
 
     git clone https://github.com/srawlins/cs453-assignment2-tests
 
+These tests use ruby, and rspec, a test framework. It will take a little bit of effort to get this working on Lectura, but I've written instructions here:
+
+    https://gist.github.com/3789499
+
 How it Works
 ============
 
@@ -61,7 +65,7 @@ The `expr_only`, `assg_only`, and `stmt_only` tests all build on some basic `Exp
 RANDOM_THRESHOLD=20 rspec --tag stmt_only
 ```
 
-That example will run approximately 20% of the `stmt_only` tests.
+That example will run approximately 20% of the `stmt_only` tests. If you do not specify `RANDOM_THRESHOLD`, then a default of 5% will be used.
 
 Generated Tests
 ---------------

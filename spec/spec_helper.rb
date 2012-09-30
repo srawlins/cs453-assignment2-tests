@@ -1,4 +1,5 @@
 require 'open4'
+require_relative 'helpers'
 
 if `which compile`.empty?
   $stderr.puts "compile not found in $PATH!!! Exiting."
@@ -7,7 +8,14 @@ end
 
 PRNG = Random.new
 puts "PRNG's seed: #{PRNG.seed}"
-THRESHOLD = ENV['RANDOM_THRESHOLD'] ? ENV['RANDOM_THRESHOLD'].to_i : nil
+if ENV['RANDOM_THRESHOLD']
+  # If $RANDOM_THRESHOLD is set, use it
+  THRESHOLD = ENV['RANDOM_THRESHOLD'].to_i
+else
+  # Alternatively, if it dodesn't, in the interest of the poor scheduler on lectura, just run 5% of the tests.
+  THRESHOLD = 5
+  $stderr.puts "$RANDOM_THRESHOLD not set. Conservatively using $RANDOM_THRESHOLD=5"
+end
 
 module Matchers
   class Succeed
@@ -87,8 +95,6 @@ module Matchers
 
       @stderr = ary[4].read
       # If there are any error line numbers that don't show up in @stderr
-      puts @err_lines
-      puts @stderr
       if @err_lines.any? {|l| not @stderr =~ /#{l}/}
         @failure_reason = :stderr
         @failure_specific = @err_lines.select {|l| not @stderr =~ /#{l}/}
